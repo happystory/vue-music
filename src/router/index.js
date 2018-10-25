@@ -4,6 +4,10 @@ import Recommend from '../views/recommend/recommend.vue'
 
 Vue.use(Router)
 
+const Singer = () => import(/* webpackChunkName: "singer" */ '../views/singer/singer.vue')
+const Rank = () => import(/* webpackChunkName: "rank" */ '../views/rank/rank.vue')
+const Search = () => import(/* webpackChunkName: "search" */ '../views/search/search.vue')
+
 export default new Router({
   routes: [
     {
@@ -18,17 +22,17 @@ export default new Router({
     {
       path: '/singer',
       name: 'singer',
-      component: () => import(/* webpackChunkName: "singer" */ '../views/singer/singer.vue')
+      component: Singer
     },
     {
       path: '/rank',
       name: 'rank',
-      component: () => import(/* webpackChunkName: "rank" */ '../views/rank/rank.vue')
+      component: Rank
     },
     {
       path: '/search',
       name: 'search',
-      component: () => import(/* webpackChunkName: "search" */ '../views/search/search.vue')
+      component: Search
     }
   ]
 })

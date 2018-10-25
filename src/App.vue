@@ -2,7 +2,9 @@
   <div id="app">
     <MHeader/>
     <Tab/>
-    <router-view/>
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
 
