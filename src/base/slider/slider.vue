@@ -155,8 +155,8 @@ export default {
 }
 </script>
 
-<style scoped lang="stylus" rel="stylesheet/stylus">
-@import '~@/assets/stylus/variable';
+<style scoped lang="stylus">
+@import '~@/assets/stylus/variable'
 
 .slider {
   min-height: 1px;

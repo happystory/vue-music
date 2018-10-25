@@ -24,7 +24,7 @@
 
 <script>
 import Slider from '../../base/slider/slider.vue'
-import { getRecommend } from '../../api/recommend'
+import { getRecommend, getDiscList } from '../../api/recommend'
 import { ERR_OK } from '../../api/config'
 
 export default {
@@ -39,8 +39,9 @@ export default {
   },
   created () {
     this._getRecommend()
+    this._getDiscList()
   },
-  activated() {
+  activated () {
     setTimeout(() => {
       this.$refs.slider && this.$refs.slider.refresh()
     }, 20)
@@ -52,6 +53,11 @@ export default {
           console.log(res.data.slider)
           this.recommends = res.data.slider
         }
+      })
+    },
+    _getDiscList () {
+      getDiscList().then((res) => {
+        console.log(res)
       })
     }
   }
